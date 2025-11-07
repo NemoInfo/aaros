@@ -1,4 +1,4 @@
-{ pkgs, latest, ... }: {
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -24,7 +24,7 @@
       vimtex
       lazygit-nvim
       vim-fugitive
-      rust-tools-nvim
+      rustaceanvim
       coc-ltex
       julia-vim
       typst-vim

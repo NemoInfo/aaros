@@ -53,6 +53,5 @@
     hayagriva
 
     gh
-    brave
   ];
 }

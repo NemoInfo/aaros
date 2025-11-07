@@ -25,6 +25,7 @@ in with lib; {
       position = "top";
 
       modules-center = [
+        "tray"
         "pulseaudio"
         "hyprland/workspaces"
         "cpu"
@@ -302,7 +303,7 @@ in with lib; {
         background: #${base01};
         margin: 4px;
         padding: 2px 20px;
-        border-radius: 50px 15px 50px 15px;
+        border-radius: 15px 50px 15px 50px;
       }
       #custom-notification {
         color: #${base0C};

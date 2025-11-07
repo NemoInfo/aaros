@@ -6,6 +6,7 @@
     ./home.nix
     ./xserver.nix
     ./sddm.nix
+    ./network.nix
     #
   ];
 }

@@ -1,4 +1,4 @@
-{ host, ... }: {
+{ ... }: {
   wayland.windowManager.hyprland.settings = {
     exec-once = [
       "wl-paste --type text --watch cliphist store" # Saves text
@@ -13,7 +13,7 @@
       "#wallsetter &"
       "pypr &"
       "nm-applet --indicator"
-      # "sleep 1.0 && swww img ${stylixImage}"
+      "sleep 1.0" # " && swww img ${stylixImage}"
     ];
   };
 }

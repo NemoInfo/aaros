@@ -1,4 +1,4 @@
-{ lib, pkgs, username, ... }: {
+{ lib, pkgs, ... }: {
   imports = [
     ./hyprland
     ./nvim
@@ -10,19 +10,12 @@
     ./swaync.nix
     ./rofi
     ./scripts
+    ./fastfetch
+    ./gtk.nix
   ];
 
   home.file.".config/sioyek/prefs_user.config".source = ./sioyek.config;
-  #
-  #  programs = {
-  #    zoxide = {
-  #      enable = true;
-  #      enableZshIntegration = true;
-  #      enableBashIntegration = true;
-  #      options = [ "--cmd cd" ];
-  #    };
-  #  };
-  #
+
   qt = {
     enable = true;
     platformTheme.name = lib.mkForce "qtct";
@@ -32,6 +25,7 @@
     enable = true;
     mime.enable = true;
     mimeApps = { enable = true; };
+    autostart = { }; # nm-applet
     portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];

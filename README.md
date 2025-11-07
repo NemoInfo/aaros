@@ -1,3 +1,3 @@
-* NixOS + Hyperland configuration
+# NixOS + Hyperland configuration
 
 Inspired by [ZaneyOS](https://gitlab.com/Zaney/zaneyos)

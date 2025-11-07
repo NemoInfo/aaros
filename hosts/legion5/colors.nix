@@ -1,7 +1,6 @@
 { pkgs }: {
   colors = {
-    # image = "/home/aaron/aaros/wallpapers/wallpaper.jpg";
-    image = "sakura_static.png";
+    image = "studio.png";
     base00 = "282936";
     base01 = "3a3c4e";
     base02 = "4d4f68";

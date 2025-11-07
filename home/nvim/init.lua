@@ -267,7 +267,7 @@ vim.keymap.set("n", "zK", function()
 end)
 
 ufo.setup({
-	provider_selector = function(bufnr, filetype, buftype) 
+	provider_selector = function(bufnr, filetype, buftype)
 		return { "treesitter", "indent" }
 	end,
 })

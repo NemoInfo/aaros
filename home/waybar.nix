@@ -3,9 +3,9 @@ let
   terminal = "alacritty";
   base00 = "0F1419";
   base01 = "131721";
-  base03 = "3E4B59";
+  _base03 = "3E4B59";
   base05 = "E6E1CF";
-  base06 = "E6E1CF";
+  _base06 = "E6E1CF";
   base07 = "F3F4F5";
   base08 = "F07178";
   base09 = "FF8F40";
@@ -170,10 +170,10 @@ in with lib; {
           font-style: normal;
           color: #${base00};
         */
-        background: linear-gradient(45deg, #${base01}, #${base01});
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         margin: 5px;
         padding: 0px 1px;
-        border-radius: 15px;
+        border-radius:  15px 15px;
         border: 0px;
         font-style: normal;
         color: #${base00};
@@ -184,7 +184,8 @@ in with lib; {
         border-radius: 15px;
         border: 0px;
         color: #${base00};
-        background: linear-gradient(45deg, #${base0D}, #${base0E});
+        background: linear-gradient(45deg, #${base0D}, #${base0E}),
+                    linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
         opacity: 0.5;
         transition: all 0.3s ease-in-out;
       }
@@ -194,7 +195,8 @@ in with lib; {
         border-radius: 15px;
         border: 0px;
         color: #${base00};
-        background: linear-gradient(45deg, #${base0D}, #${base0E});
+        background: linear-gradient(45deg, #${base0D}, #${base0E}),
+                    linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
         opacity: 1.0;
         min-width: 40px;
         transition: all 0.3s ease-in-out;
@@ -206,7 +208,7 @@ in with lib; {
         opacity: 0.8;
       }
       tooltip {
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border: 1px solid #${base0E};
         border-radius: 10px;
       }
@@ -217,7 +219,7 @@ in with lib; {
         /*
           Eternal
           color: #${base05};
-          background: #${base00};
+          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 15px;
           margin: 5px;
           padding: 2px 20px;
@@ -225,14 +227,14 @@ in with lib; {
         margin: 5px;
         padding: 2px 20px;
         color: #${base05};
-        background: #${base01};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 50px 15px 50px 15px;
       }
       #memory {
         color: #${base0F};
         /*
           Eternal
-          background: #${base00};
+          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 50px 15px 50px 15px;
           margin: 5px;
           padding: 2px 20px;
@@ -244,49 +246,49 @@ in with lib; {
       }
       #clock {
         color: #${base0B};
-          background: #${base00};
+          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 15px 50px 15px 50px;
           margin: 5px;
           padding: 2px 20px;
       }
       #idle_inhibitor {
         color: #${base0A};
-          background: #${base00};
+          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 50px 15px 50px 15px;
           margin: 5px;
           padding: 2px 20px;
       }
       #cpu {
         color: #${base07};
-          background: #${base00};
+          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 50px 15px 50px 15px;
           margin: 5px;
           padding: 2px 20px;
       }
       #disk {
         color: #${base0F};
-          background: #${base00};
+          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 15px 50px 15px 50px;
           margin: 5px;
           padding: 2px 20px;
       }
       #battery {
         color: #${base08};
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
       }
       #network {
         color: #${base09};
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 50px 15px 50px 15px;
         margin: 5px;
         padding: 2px 20px;
       }
       #tray {
         color: #${base05};
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
@@ -295,26 +297,26 @@ in with lib; {
         color: #${base0D};
         /*
           Eternal
-          background: #${base00};
+          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 15px 50px 15px 50px;
           margin: 5px;
           padding: 2px 20px;
         */
-        background: #${base01};
+        background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         margin: 4px;
         padding: 2px 20px;
         border-radius: 15px 50px 15px 50px;
       }
       #custom-notification {
         color: #${base0C};
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
       }
       #custom-startmenu {
         color: #${base0D};
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         font-size: 15pt;
         border-radius: 0px 15px 50px 0px;
         margin: 5px 5px 5px 0px;
@@ -322,14 +324,14 @@ in with lib; {
       }
       #idle_inhibitor {
         color: #${base09};
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
       }
       #custom-exit {
         color: #${base0E};
-        background: #${base00};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 0px 0px 50px;
         margin: 5px 0px 5px 5px;
         padding: 2px 20px;

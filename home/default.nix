@@ -6,7 +6,7 @@
     ./git.nix
     ./zsh.nix
     ./packages.nix
-    ./waybar/waybar-jerry.nix
+    ./waybar.nix
     ./swaync.nix
     ./rofi
     ./scripts

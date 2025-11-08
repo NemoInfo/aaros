@@ -4,13 +4,15 @@
     window {
       width: 750px;
       border-radius: 20px;
+      background-color: rgba(0,0,0,0.02);
+      border: 1px;
     }
     mainbox {
       orientation: vertical;
       children: [ "inputbar", "listbox" ];
     }
     inputbar {
-      padding: 75px 40px;
+      padding: 30px 10px;
       background-color: transparent;
       text-color: @foreground;
       children: [ "textbox-prompt-colon", "entry" ];

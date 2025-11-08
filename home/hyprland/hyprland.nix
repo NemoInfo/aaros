@@ -142,7 +142,8 @@ in {
     extraConfig = ''
       monitor=,preferred,auto,auto
       ${extraMonitorSettings}
-      # layerrule = blur,waybar
+      layerrule = blur,rofi
+      layerrule = ignorealpha 0.01,rofi
     '';
   };
 }

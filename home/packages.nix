@@ -17,6 +17,7 @@
     syncthing
     qemu
     quickemu
+    zoom-us
 
     # Fonts
     libertinus # TODO: move these to system fonts

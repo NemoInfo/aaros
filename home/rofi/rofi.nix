@@ -13,9 +13,9 @@ in {
         icon-theme = "Papirus";
         font = "JetBrainsMono Nerd Font Mono 12";
         drun-display-format = "{icon} {name}";
-        display-drun = " Apps";
-        display-run = " Run";
-        display-filebrowser = " File";
+        display-drun = "  Apps";
+        display-run = "  Run";
+        display-filebrowser = "  File";
       };
       theme = let inherit (config.lib.formats.rasi) mkLiteral;
       in {
@@ -41,7 +41,9 @@ in {
           cursor = "default";
           enabled = true;
           border-radius = mkLiteral "15px";
-          background-color = mkLiteral "@bg";
+          border-width = mkLiteral "2px";
+          border-color = mkLiteral "#DE53AD";
+          background-color = mkLiteral "transparent";
         };
         "mainbox" = {
           enabled = true;

@@ -3,7 +3,7 @@ _: {
     settings = {
       windowrule = [
         "noblur, class:^(bresolveb)$, xwayland:1" # Window rule for just resolve
-        "tag +file-manager, class:^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt)$"
+        "tag +file-manager, class:^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt|rofi)$"
         "tag +terminal, class:^(com.mitchellh.ghostty|org.wezfurlong.wezterm|Alacritty|kitty|kitty-dropterm)$"
         "tag +browser, class:^(Brave-browser(-beta|-dev|-unstable)?)$"
         "tag +browser, class:^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$"
@@ -58,7 +58,7 @@ _: {
         "opacity 1.0 1.0, tag:browser*"
         "opacity 0.9 0.8, tag:projects*"
         "opacity 0.94 0.86, tag:im*"
-        "opacity 0.9 0.8, tag:file-manager*"
+        "opacity 0.85 0.8, tag:file-manager*"
         "opacity 0.95 0.9, tag:terminal*"
         "opacity 0.8 0.7, tag:settings*"
         "opacity 0.8 0.7, class:^(gedit|org.gnome.TextEditor|mousepad)$"

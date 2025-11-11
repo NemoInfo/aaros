@@ -1,16 +1,16 @@
-{ pkgs, inputs, username, host, profile, ... }: {
+{ pkgs, inputs, username, host, profile, system, ... }: {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = false;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs username host profile; };
+    extraSpecialArgs = { inherit inputs username host profile system; };
     users.${username} = {
       imports = [ ../home ];
       home = {
         username = "${username}";
         homeDirectory = "/home/${username}";
-        stateVersion = "23.11";
+        stateVersion = "25.05";
       };
     };
   };
@@ -27,9 +27,11 @@
       "scanner"
       "wheel" # sudo access
       "vboxusers" # Virtual Box
+      "syncthing"
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
+  programs.zsh.enable = true;
   nix.settings.allowed-users = [ "${username}" ];
 }

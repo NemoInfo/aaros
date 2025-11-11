@@ -7,6 +7,7 @@
     ./xserver.nix
     ./sddm.nix
     ./network.nix
-    #
+    ./packages.nix
+    ./syncthing.nix
   ];
 }

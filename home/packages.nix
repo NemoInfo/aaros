@@ -3,7 +3,7 @@ let unstable = import inputs.nixpkgs-unstable { system = system; };
 in {
   nixpkgs.config.allowUnfree = true;
   home.packages = let
-    l1 = with unstable; [ ];
+    l1 = with unstable; [ typst tinymist ];
     l2 = with pkgs; [
       syncthing
       # apps
@@ -53,8 +53,6 @@ in {
       rustc # Rust compiler
       cargo # Rust dependecy manager
       cudatoolkit
-      typst # f*ck latex
-      tinymist
       hayagriva
 
       gh

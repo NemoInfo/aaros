@@ -470,7 +470,7 @@ lspconfig.tinymist.setup({
         arguments = { vim.v.null },
       }, { bufnr = bufnr })
     end, { desc = "[T]inymist [U]npin", noremap = true })
-    vim.keymap.set("n", "<leader>tp", ":TypstPreviewToggle", { noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>tp", ":TypstPreviewToggle<CR>", { noremap = true, silent = true })
   end,
 })
 vim.g.typst_conceal = 1

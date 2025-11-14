@@ -12,6 +12,7 @@
     ./scripts
     ./fastfetch
     ./gtk.nix
+    ./stylix.nix
   ];
 
   home.file.".config/sioyek/prefs_user.config".source = ./sioyek.config;

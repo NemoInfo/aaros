@@ -20,7 +20,7 @@ STATUS=${PIPESTATUS[0]}
 set -e
 
 if [ $STATUS -eq 0 ]; then
-    notify-send --transient --replace-id "$NOTIFY_ID" "󱄅 NixOS Rebuild" "✔ Complete!"
+    notify-send -t 1000 --transient --replace-id "$NOTIFY_ID" "󱄅 NixOS Rebuild" "✔ Complete!"
 else
     notify-send --transient --replace-id "$NOTIFY_ID" "󱄅 NixOS Rebuild" "✖ Error! Opening log…"
     alacritty --class "log-popup" -e nvim "$LOGFILE" +$

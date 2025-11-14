@@ -9,5 +9,8 @@
     ./network.nix
     ./packages.nix
     ./syncthing.nix
+    ./services.nix
+    ./stylix.nix
+    inputs.stylix.nixosModules.stylix
   ];
 }

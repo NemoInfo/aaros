@@ -23,6 +23,8 @@ in {
       quickemu
       zoom-us
       libnotify
+      rofi-bluetooth
+      pavucontrol
 
       # Fonts
       libertinus # TODO: move these to system fonts

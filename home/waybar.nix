@@ -26,6 +26,7 @@ in with lib; {
 
       modules-center = [
         "tray"
+        "bluetooth"
         "pulseaudio"
         "hyprland/workspaces"
         "cpu"
@@ -55,13 +56,26 @@ in with lib; {
           "class<.*chrome.*>" = "󰊯";
           "class<Alacritty>" = "";
           "class<Alacritty> title<.*nvim.*>" = "";
-          "title<Typst Preview>" = "";
-          "class<sioyek>" = "";
+          "title<Typst Preview>" = "";
+          "class<sioyek>" = "";
           "class<.*Gimp.*>" = "";
           "class<.*inkscape.*>" = "";
         };
         on-scroll-up = "hyprctl dispatch workspace e+1";
         on-scroll-down = "hyprctl dispatch workspace e-1";
+      };
+      bluetooth = {
+        "on-click" = "rofi-bluetooth -show drun -config ~/.config/rofi/config-long.rasi";
+        "on-click-right" = "blueman-manager";
+        format = "{icon}";
+        interval = 15;
+        "format-icons" = {
+          on = "<span foreground='#43242B'></span>";
+          off = "<span foreground='#76946A'>󰂲</span>";
+          disabled = "󰂲";
+          connected = "";
+        };
+        "tooltip-format" = "{device_alias} {status}";
       };
       "clock" = {
         format = "  {:%H:%M}";
@@ -299,6 +313,13 @@ in with lib; {
         padding: 2px 20px;
       }
       #tray {
+        color: #${base05};
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+        border-radius: 15px 50px 15px 50px;
+        margin: 5px;
+        padding: 2px 20px;
+      }
+      #bluetooth {
         color: #${base05};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;

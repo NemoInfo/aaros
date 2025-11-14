@@ -13,7 +13,7 @@
         clippaste > /tmp/thing.bib && hayagriva /tmp/thing.bib | clipcopy && echo "✔ YAML copied to clipboard"'';
     };
     initContent = ''
-      if [ -n "$IN_NIX_SHELL" ]; then
+      if [[ -n "$IN_NIX_SHELL" ]]; then
         ZSH_THEME="cloud"
       fi
       if [[ -n "$THEME" ]]; then

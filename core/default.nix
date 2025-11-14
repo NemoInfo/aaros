@@ -11,6 +11,7 @@
     ./syncthing.nix
     ./services.nix
     ./stylix.nix
+    ./thunar.nix
     inputs.stylix.nixosModules.stylix
   ];
 }

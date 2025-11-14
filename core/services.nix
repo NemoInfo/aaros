@@ -13,6 +13,7 @@ _: {
       ports = [ 22 ];
     };
     blueman.enable = true; # Bluetooth Support
+    tumbler.enable = true; # Image/Video Preview
     pipewire = {
       enable = true;
       alsa.enable = true;

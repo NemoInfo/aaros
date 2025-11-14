@@ -69,6 +69,11 @@ _: {
         "noblur, tag:games*"
         "fullscreen, tag:games*"
         "float,class:^(log-popup)$"
+
+        "float,class:^(GLava)$"
+        "noblur,class:^(GLava)$"
+        "bordersize 0, class:^(GLava)$"
+        "noshadow, class:^(GLava)$"
       ];
     };
   };

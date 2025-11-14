@@ -22,6 +22,7 @@ in {
       qemu
       quickemu
       zoom-us
+      libnotify
 
       # Fonts
       libertinus # TODO: move these to system fonts

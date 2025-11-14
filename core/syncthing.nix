@@ -1,8 +1,5 @@
-{ username, nixpkgs-unstable, system, ... }:
-let _unstable = import nixpkgs-unstable { system = system; };
-in {
+{ username, ... }: {
   services.syncthing = {
-    # package = unstable.syncthing;
     enable = true;
     user = "${username}";
     configDir = "/home/${username}/.config/syncthing";

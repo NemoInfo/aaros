@@ -68,6 +68,7 @@ _: {
         "keepaspectratio, title:^(Picture-in-Picture)$"
         "noblur, tag:games*"
         "fullscreen, tag:games*"
+        "float,class:^(log-popup)$"
       ];
     };
   };

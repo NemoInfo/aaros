@@ -5,5 +5,6 @@
     (import ./screenshootin.nix { inherit pkgs; })
     (import ./task-waybar.nix { inherit pkgs; })
     (import ./web-search.nix { inherit pkgs; })
+    (import ./rebuild.nix { inherit pkgs; })
   ];
 }

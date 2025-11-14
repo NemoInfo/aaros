@@ -42,11 +42,23 @@ in with lib; {
       ]; # Eternal: [ "idle_inhibitor" "pulseaudio" "clock"  "custom/notification" "tray" ]
 
       "hyprland/workspaces" = {
-        format = "{name}";
+        format = "{name} {windows} ";
+        format-window-separator = " ";
         format-icons = {
           default = " ";
           active = " ";
           urgent = " ";
+        };
+        window-rewrite-default = "";
+        window-rewrite = {
+          "title<.*youtube.*>" = "";
+          "class<.*chrome.*>" = "󰊯";
+          "class<Alacritty>" = "";
+          "class<Alacritty> title<.*nvim.*>" = "";
+          "title<Typst Preview>" = "";
+          "class<sioyek>" = "";
+          "class<.*Gimp.*>" = "";
+          "class<.*inkscape.*>" = "";
         };
         on-scroll-up = "hyprctl dispatch workspace e+1";
         on-scroll-down = "hyprctl dispatch workspace e-1";
@@ -58,7 +70,7 @@ in with lib; {
           "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
       };
       "hyprland/window" = {
-        max-length = 60;
+        max-length = 40;
         separate-outputs = false;
       };
       "memory" = {

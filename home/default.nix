@@ -13,21 +13,9 @@
     ./fastfetch
     ./gtk.nix
     ./stylix.nix
+    ./swappy.nix
   ];
-
   home.file.".config/sioyek/prefs_user.config".source = ./sioyek.config;
-  # home.file.".config/swappy/config".text = ''
-  #   [default]
-  #   save_dir=/home/${username}/pictures/screenshots
-  #   save_filename_format=swappy-%y%m%d-%h%m%s.png
-  #   show_panel=false
-  #   line_size=5
-  #   text_size=20
-  #   text_font=ubuntu
-  #   paint_mode=brush
-  #   early_exit=true
-  #   fill_shape=false
-  # '';
 
   qt = {
     enable = true;

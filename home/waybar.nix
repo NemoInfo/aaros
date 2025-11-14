@@ -25,12 +25,10 @@ in with lib; {
       position = "top";
 
       modules-center = [
-        "tray"
-        "bluetooth"
         "pulseaudio"
         "hyprland/workspaces"
         "cpu"
-        "network"
+        "tray"
       ]; # Eterna: [ "hyprland/window" ]
       modules-left = [
         "custom/startmenu"
@@ -52,7 +50,9 @@ in with lib; {
         };
         window-rewrite-default = "";
         window-rewrite = {
-          "title<.*youtube.*>" = "";
+          "title<.*YouTube Music.*>" = "";
+          "title<.*YouTube.*>" = "";
+          "class<thunar>" = "";
           "class<.*chrome.*>" = "󰊯";
           "class<Alacritty>" = "";
           "class<Alacritty> title<.*nvim.*>" = "";
@@ -317,7 +317,7 @@ in with lib; {
       #tray {
         color: #${base05};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
-        border-radius: 15px 50px 15px 50px;
+        border-radius: 50px 15px 50px 15px;
         margin: 5px;
         padding: 2px 20px;
       }

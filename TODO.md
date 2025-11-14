@@ -1,10 +1,11 @@
 * TODO:
 [x] Nicer rofi
-[ ] Nicer web-search
+[x] Nicer web-search
 [x] Even nicer rofi
-[ ] bluetooth gui
-[ ] filemanger
-[ ] Better color pallete
+[x] bluetooth gui
+[x] Better color pallete
+[x] stylix for theme
 [ ] Better cursor
-[ ] fix nix develop theme
-[ ] stylix for theme
+[x] fix nix develop theme
+[ ] filemanger
+[ ] nice music vislaizer

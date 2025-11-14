@@ -8,6 +8,7 @@ in {
       "$modifier,R,exec,rofi-launcher"
       "$modifier SHIFT,R,exec,rebuild"
       "$modifier SHIFT,Return,exec,rofi-launcher"
+      "$modifier,V,exec,glava"
       "$modifier SHIFT,W,exec,web-search"
       "$modifier ALT,W,exec,wallsetter"
       "$modifier,W,exec,${browser}"

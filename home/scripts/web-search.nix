@@ -8,10 +8,10 @@ pkgs.writeShellScriptBin "web-search" ''
   declare -A URLS
 
   URLS=(
-    ["Unstable Packages"]="https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
-    ["YouTube"]="https://www.youtube.com/results?search_query="
-    ["Arch Wiki"]="https://wiki.archlinux.org/title/"
-    ["Gentoo Wiki"]="https://wiki.gentoo.org/index.php?title="
+    [" Google Scholar"]="https://scholar.google.com/?authuser=1"
+    [" YouTube"]="https://www.youtube.com/results?search_query="
+    ["󱄅 NixOs Packages"]="https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
+    ["󱁉 ChatGPT"]="https://chatgpt.com/"
   )
 
   # List for rofi
@@ -24,10 +24,10 @@ pkgs.writeShellScriptBin "web-search" ''
 
   main() {
     # Pass the list to rofi
-    platform=$( (gen_list) | ${pkgs.rofi-wayland}/bin/rofi -dmenu -config ~/.config/rofi/config-long.rasi )
+    platform=$( (gen_list) | ${pkgs.rofi-wayland}/bin/rofi -i -dmenu -config ~/.config/rofi/config-long.rasi )
 
     if [[ -n "$platform" ]]; then
-      query=$( (echo ) | ${pkgs.rofi-wayland}/bin/rofi -dmenu -config ~/.config/rofi/config-long.rasi )
+      query=$(${pkgs.rofi-wayland}/bin/rofi -i -dmenu -config ~/.config/rofi/config-long.rasi)
 
       if [[ -n "$query" ]]; then
         url=''${URLS[$platform]}$query

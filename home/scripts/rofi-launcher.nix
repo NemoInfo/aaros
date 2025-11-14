@@ -4,5 +4,5 @@ pkgs.writeShellScriptBin "rofi-launcher" ''
   if pidof rofi > /dev/null; then
     pkill rofi
   fi
-  rofi -show drun -config ~/.config/rofi/config-long.rasi
+  rofi -i -show drun -config ~/.config/rofi/config-long.rasi
 ''

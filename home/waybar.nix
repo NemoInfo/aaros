@@ -60,12 +60,14 @@ in with lib; {
           "class<sioyek>" = "";
           "class<.*Gimp.*>" = "";
           "class<.*inkscape.*>" = "";
+          "title<.*glava.*>" = "󱑽";
         };
         on-scroll-up = "hyprctl dispatch workspace e+1";
         on-scroll-down = "hyprctl dispatch workspace e-1";
       };
       bluetooth = {
-        "on-click" = "rofi-bluetooth -show drun -config ~/.config/rofi/config-long.rasi";
+        "on-click" =
+          "rofi-bluetooth -i -show drun -config ~/.config/rofi/config-long.rasi";
         "on-click-right" = "blueman-manager";
         format = "{icon}";
         interval = 15;

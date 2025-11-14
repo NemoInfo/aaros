@@ -25,6 +25,7 @@ in {
       libnotify
       rofi-bluetooth
       pavucontrol
+      glava
 
       # Fonts
       libertinus # TODO: move these to system fonts

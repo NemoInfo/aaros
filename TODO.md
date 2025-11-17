@@ -5,7 +5,7 @@
 [x] bluetooth gui
 [x] Better color pallete
 [x] stylix for theme
-[ ] Better cursor
+[x] Better cursor
 [x] fix nix develop theme
-[ ] filemanger
-[ ] nice music vislaizer
+[x] filemanger
+[x] nice music vislaizer

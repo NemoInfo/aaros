@@ -1,6 +1,4 @@
 {
-  gitUsername = "dwilliams";
-  gitEmail = "don.e.williams@gmail.com";
   extraMonitorSettings = ''
     monitor = eDP-1, 1920x1080@165, 0x0, 1
   '';

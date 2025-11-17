@@ -1,20 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs, host, lib, ... }:
 let
   terminal = "alacritty";
-  base00 = "0F1419";
-  base01 = "131721";
-  _base03 = "3E4B59";
-  base05 = "E6E1CF";
-  _base06 = "E6E1CF";
-  base07 = "F3F4F5";
-  base08 = "F07178";
-  base09 = "FF8F40";
-  base0A = "FFB454";
-  base0B = "B8CC52";
-  base0C = "95E6CB";
-  base0D = "59C2FF";
-  base0E = "D2A6FF";
-  base0F = "E6B673";
+  inherit (import ../hosts/${host}/colors.nix { inherit pkgs; }) colors;
 in with lib; {
   # Configure & Theme Waybar
   programs.waybar = {
@@ -56,7 +43,7 @@ in with lib; {
           "class<.*chrome.*>" = "󰊯";
           "class<Alacritty>" = "";
           "class<Alacritty> title<.*nvim.*>" = "";
-          "title<Typst Preview>" = "";
+          "title<Typst Preview>" = "t";
           "class<sioyek>" = "";
           "class<.*Gimp.*>" = "";
           "class<.*inkscape.*>" = "";
@@ -179,24 +166,24 @@ in with lib; {
           background-color: rgba(26,27,38,0);
           border-bottom: 1px solid rgba(26,27,38,0);
           border-radius: 0px;
-          color: #${base0F};
+          color: #${colors.base0F};
         */
 
         background-color: rgba(26,27,38,0);
         border-bottom: 1px solid rgba(26,27,38,0);
         border-radius: 0px;
-        color: #${base0F};
+        color: #${colors.base0F};
       }
       #workspaces {
         /*
           Eternal
-          background: linear-gradient(180deg, #${base00}, #${base01});
+          background: linear-gradient(180deg, #${colors.base00}, #${colors.base01});
           margin: 5px 5px 5px 0px;
           padding: 0px 10px;
           border-radius: 0px 15px 50px 0px;
           border: 0px;
           font-style: normal;
-          color: #${base00};
+          color: #${colors.base00};
         */
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         margin: 5px;
@@ -204,15 +191,15 @@ in with lib; {
         border-radius:  15px 15px;
         border: 0px;
         font-style: normal;
-        color: #${base00};
+        color: #${colors.base00};
       }
       #workspaces button {
         padding: 0px 5px;
         margin: 4px 3px;
         border-radius: 15px;
         border: 0px;
-        color: #${base00};
-        background: linear-gradient(45deg, #${base0D}, #${base0E}),
+        color: #${colors.base00};
+        background: linear-gradient(45deg, #${colors.base0D}, #${colors.base0E}),
                     linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
         opacity: 0.5;
         transition: all 0.3s ease-in-out;
@@ -222,8 +209,8 @@ in with lib; {
         margin: 4px 3px;
         border-radius: 15px;
         border: 0px;
-        color: #${base00};
-        background: linear-gradient(45deg, #${base0D}, #${base0E}),
+        color: #${colors.base00};
+        background: linear-gradient(45deg, #${colors.base0D}, #${colors.base0E}),
                     linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
         opacity: 1.0;
         min-width: 40px;
@@ -231,22 +218,22 @@ in with lib; {
       }
       #workspaces button:hover {
         border-radius: 15px;
-        color: #${base00};
-        background: linear-gradient(45deg, #${base0D}, #${base0E});
+        color: #${colors.base00};
+        background: linear-gradient(45deg, #${colors.base0D}, #${colors.base0E});
         opacity: 0.8;
       }
       tooltip {
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
-        border: 1px solid #${base0E};
+        border: 1px solid #${colors.base0E};
         border-radius: 10px;
       }
       tooltip label {
-        color: #${base07};
+        color: #${colors.base07};
       }
       #window {
         /*
           Eternal
-          color: #${base05};
+          color: #${colors.base0C};
           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 15px;
           margin: 5px;
@@ -254,12 +241,12 @@ in with lib; {
         */
         margin: 5px;
         padding: 2px 20px;
-        color: #${base05};
+        color: #${colors.base0C};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 50px 15px 50px 15px;
       }
       #memory {
-        color: #${base0F};
+        color: #${colors.base0F};
         /*
           Eternal
           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
@@ -267,69 +254,69 @@ in with lib; {
           margin: 5px;
           padding: 2px 20px;
         */
-        background: #${base01};
+        background: #${colors.base01};
         margin: 5px;
         padding: 2px 20px;
         border-radius: 15px 50px 15px 50px;
       }
       #clock {
-        color: #${base0B};
+        color: #${colors.base0C};
           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 15px 50px 15px 50px;
           margin: 5px;
           padding: 2px 20px;
       }
       #idle_inhibitor {
-        color: #${base0A};
+        color: #${colors.base0A};
           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 50px 15px 50px 15px;
           margin: 5px;
           padding: 2px 20px;
       }
       #cpu {
-        color: #${base07};
+        color: #${colors.base0C};
           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 50px 15px 50px 15px;
           margin: 5px;
           padding: 2px 20px;
       }
       #disk {
-        color: #${base0F};
+        color: #${colors.base0F};
           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
           border-radius: 15px 50px 15px 50px;
           margin: 5px;
           padding: 2px 20px;
       }
       #battery {
-        color: #${base08};
+        color: #${colors.base0C};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
       }
       #network {
-        color: #${base09};
+        color: #${colors.base09};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 50px 15px 50px 15px;
         margin: 5px;
         padding: 2px 20px;
       }
       #tray {
-        color: #${base05};
+        color: #${colors.base0C};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 50px 15px 50px 15px;
         margin: 5px;
         padding: 2px 20px;
       }
       #bluetooth {
-        color: #${base05};
+        color: #${colors.base0C};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
       }
       #pulseaudio {
-        color: #${base0D};
+        color: #${colors.base0C};
         /*
           Eternal
           background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
@@ -343,14 +330,14 @@ in with lib; {
         border-radius: 15px 50px 15px 50px;
       }
       #custom-notification {
-        color: #${base0C};
+        color: #${colors.base0C};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
       }
       #custom-startmenu {
-        color: #${base0D};
+        color: #${colors.base0C};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         font-size: 15pt;
         border-radius: 0px 15px 50px 0px;
@@ -358,14 +345,14 @@ in with lib; {
         padding: 2px 20px;
       }
       #idle_inhibitor {
-        color: #${base09};
+        color: #${colors.base09};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 50px 15px 50px;
         margin: 5px;
         padding: 2px 20px;
       }
       #custom-exit {
-        color: #${base0E};
+        color: #${colors.base0E};
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
         border-radius: 15px 0px 0px 50px;
         margin: 5px 0px 5px 5px;

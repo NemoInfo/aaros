@@ -13,6 +13,7 @@
       "#wallsetter &"
       "pypr &"
       "nm-applet --indicator"
+      "ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
       "sleep 1.0" # " && swww img ${stylixImage}"
     ];
   };

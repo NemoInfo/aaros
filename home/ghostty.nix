@@ -1,7 +1,17 @@
-{ ... }: {
+{ pkgs, ... }:
+let
+  myGhostty = pkgs.ghostty.overrideAttrs (_: {
+    preBuild = ''
+      shopt -s globstar
+      sed -i 's/^const xev = @import("xev");$/const xev = @import("xev").Epoll;/' **/*.zig
+      shopt -u globstar
+    '';
+  });
+in {
   programs.ghostty = {
     enable = true;
     enableZshIntegration = true;
+    package = myGhostty; # to fix a bug in current builds of ghostty
   };
   home.file."./.config/ghostty/config".text = ''
     theme = Kanagawa Wave

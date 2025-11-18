@@ -1,6 +1,6 @@
 { pkgs, host, lib, ... }:
 let
-  terminal = "alacritty";
+  inherit (import ../hosts/${host}/variables.nix) terminal;
   inherit (import ../hosts/${host}/colors.nix { inherit pkgs; }) colors;
 in with lib; {
   # Configure & Theme Waybar

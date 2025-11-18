@@ -28,8 +28,8 @@
         # To provent yazi from starting xterm when run from rofi menu
         # You can set to your preferred terminal if you you like
         # ToDo: Pull default terminal from config
-        "TERMINAL,alacritty"
-        "XDG_TERMINAL_EMULATOR,alacritty"
+        "TERMINAL,ghostty"
+        "XDG_TERMINAL_EMULATOR,ghostty"
       ];
     };
   };

@@ -8,5 +8,5 @@
   nvidiaID = "PCI:1:0:0";
   amdgpuID = "PCI:5:0:0";
   browser = "goog-chrome-stable";
-  terminal = "alacritty";
+  terminal = "ghostty";
 }

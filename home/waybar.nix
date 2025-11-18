@@ -41,13 +41,14 @@ in with lib; {
           "title<.*YouTube.*>" = "";
           "class<thunar>" = "";
           "class<.*chrome.*>" = "󰊯";
-          "class<Alacritty>" = "";
-          "class<Alacritty> title<.*nvim.*>" = "";
+          "class<(Alacritty|.*ghostty.*)>" = "";
+          "title<.*nvim.*>" = "";
           "title<Typst Preview>" = "t";
           "class<sioyek>" = "";
           "class<.*Gimp.*>" = "";
           "class<.*inkscape.*>" = "";
           "title<.*glava.*>" = "󱑽";
+          "title<.*btop.*>" = "";
         };
         on-scroll-up = "hyprctl dispatch workspace e+1";
         on-scroll-down = "hyprctl dispatch workspace e-1";

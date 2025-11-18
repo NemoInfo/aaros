@@ -11,7 +11,6 @@ in {
       google-chrome
       firefox
       gimp
-      alacritty
       discord
       inkscape
       obs-studio

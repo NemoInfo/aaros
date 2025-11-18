@@ -473,9 +473,9 @@ lspconfig.tinymist.setup({
     vim.keymap.set("n", "<leader>tp", ":TypstPreviewToggle<CR>", { noremap = true, silent = true })
   end,
 })
-vim.g.typst_conceal = 1
-vim.g.typst_conceal_emoji = 1
-vim.g.typst_conceal_math = 0
+-- vim.g.typst_conceal = 1 -- Currently broken with TreeSitter =(, Kinda usless anyway since i always run the preview
+-- vim.g.typst_conceal_emoji = 1
+-- vim.g.typst_conceal_math = 1
 
 require("typst-preview").setup({
   --  invert_colors = "always",

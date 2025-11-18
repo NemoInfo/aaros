@@ -3,6 +3,7 @@
     ./hyprland
     ./nvim
     ./alacritty.nix
+    ./ghostty.nix
     ./git.nix
     ./zsh.nix
     ./packages.nix
@@ -14,6 +15,7 @@
     ./gtk.nix
     ./stylix.nix
     ./swappy.nix
+    ./zoxide.nix
   ];
   home.file.".config/sioyek/prefs_user.config".source = ./sioyek.config;
 

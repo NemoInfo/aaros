@@ -7,9 +7,11 @@ in {
     viAlias = true;
     vimAlias = true;
     plugins = let
-      l1 = with unstable.vimPlugins; [ typst-preview-nvim ];
+      l1 = with unstable.vimPlugins; [
+        typst-preview-nvim
+        typst-vim
+      ];
       l2 = with pkgs.vimPlugins; [
-        packer-nvim
         lualine-nvim
         rose-pine
         telescope-fzf-native-nvim
@@ -29,7 +31,6 @@ in {
         lazygit-nvim
         vim-fugitive
         rustaceanvim
-        coc-ltex
         julia-vim
         typst-vim
         nvim-ufo
@@ -42,7 +43,6 @@ in {
         vim-floaterm
         nvim-surround
         leap-nvim
-        typst-vim
       ];
     in l1 ++ l2;
   };

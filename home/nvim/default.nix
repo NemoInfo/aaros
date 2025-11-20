@@ -7,10 +7,7 @@ in {
     viAlias = true;
     vimAlias = true;
     plugins = let
-      l1 = with unstable.vimPlugins; [
-        typst-preview-nvim
-        typst-vim
-      ];
+      l1 = with unstable.vimPlugins; [ typst-preview-nvim typst-vim ];
       l2 = with pkgs.vimPlugins; [
         lualine-nvim
         rose-pine
@@ -43,9 +40,10 @@ in {
         vim-floaterm
         nvim-surround
         leap-nvim
+        lsp-inlayhints-nvim
       ];
     in l1 ++ l2;
   };
 
-  home.file.".config/nvim/init.lua".source = ./init.lua;
+  home.file.".config/nvim/".source = ../nvim;
 }

@@ -58,7 +58,7 @@ in {
       cudatoolkit
       hayagriva
 
-      gh
+      gh # github, why tough?
     ];
   in l1 ++ l2;
 }

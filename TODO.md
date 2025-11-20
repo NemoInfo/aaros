@@ -1,11 +1,12 @@
 * TODO:
-[x] Nicer rofi
-[x] Nicer web-search
-[x] Even nicer rofi
-[x] bluetooth gui
-[x] Better color pallete
-[x] stylix for theme
-[x] Better cursor
-[x] fix nix develop theme
-[x] filemanger
-[x] nice music vislaizer
+- [x] Nicer rofi
+- [x] Nicer web-search
+- [x] Even nicer rofi
+- [x] bluetooth gui
+- [x] Better color pallete
+- [x] stylix for theme
+- [x] Better cursor
+- [x] fix nix develop theme
+- [x] filemanger
+- [x] nice music vislaizer
+- [ ] Add inline hint toggle

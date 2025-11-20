@@ -338,8 +338,8 @@ local on_attach = function(_, bufnr)
       vim.cmd("normal! zz")
     end
   end
-  vim.keymap.set("n", "<leader>ej", goto_diagnositc(true), opts)  -- Code actions
-  vim.keymap.set("n", "<leader>ek", goto_diagnositc(false), opts) -- Code actions
+  vim.keymap.set("n", "<leader>ej", goto_diagnositc(true), opts)  -- Jump to diagnostic
+  vim.keymap.set("n", "<leader>ek", goto_diagnositc(false), opts) -- Jump to diagnostic
 
   vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = bufnr,
@@ -411,6 +411,32 @@ lspconfig.nil_ls.setup({
   },
 })
 
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true)
+    end
+  end,
+})
+
+--[[**************************************@******************************************
+*                                       OCaml                                       *
+*********************************************************************************--]]
+if vim.fn.executable('ocamllsp') == 1 then
+  vim.lsp.enable('ocamllsp')
+  vim.lsp.config('ocamllsp', {
+    on_attach = on_attach,
+    settings = {
+      inlayHints = {
+        hintPatternVariables = true,
+        hintLetBindings = true,
+        hintFunctionParams = true
+      },
+    }
+  })
+end
+
 --[[**************************************@******************************************
 *                                       JULIA                                       *
 *********************************************************************************--]]
@@ -456,6 +482,7 @@ lspconfig.tinymist.setup({
   },
   single_file_support = true,
   on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
     vim.keymap.set("n", "<leader>tP", function()
       client:exec_cmd({
         title = "pin",
@@ -680,6 +707,7 @@ vim.keymap.set("n", "gf", function()
     vim.cmd("normal! gf")
   end
 end, { noremap = true, silent = true })
+
 
 require("nvim-surround").setup()
 require("leap").setup({})

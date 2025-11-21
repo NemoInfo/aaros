@@ -322,6 +322,11 @@ local on_attach = function(_, bufnr)
   vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, opts)         -- Rename variable
   vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, opts)    -- Code actions
 
+  local function toggle_inlay_hints()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end
+  vim.keymap.set("n", "<leader>lH", toggle_inlay_hints, opts) -- Signature hint
+
   local function goto_diagnositc(next)
     return function()
       local diags = vim.diagnostic.get(vim.api.nvim_get_current_buf())

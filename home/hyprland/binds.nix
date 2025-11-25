@@ -4,7 +4,8 @@ in {
   wayland.windowManager.hyprland.settings = {
     bind = [
       "$modifier,SPACE,exec,${terminal}"
-      "$modifier,B,exec,list-keybinds"
+      "$modifier,K,exec,list-keybinds"
+      "$modifier,B,exec,pkill -USR1 waybar"
       "$modifier,R,exec,rofi-launcher"
       "$modifier SHIFT,R,exec,rebuild"
       "$modifier SHIFT,Return,exec,rofi-launcher"

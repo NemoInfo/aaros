@@ -43,7 +43,7 @@ in with lib; {
           "class<.*chrome.*>" = "󰊯";
           "class<(Alacritty|.*ghostty.*)>" = "";
           "title<.*nvim.*>" = "";
-          "title<Typst Preview>" = "t";
+          "title<Typst Preview>" = "";
           "class<sioyek>" = "";
           "class<.*Gimp.*>" = "";
           "class<.*inkscape.*>" = "";
@@ -149,7 +149,7 @@ in with lib; {
         };
         format = "{icon} {capacity}%";
         format-charging = "󰂄 {capacity}%";
-        format-plugged = "󱘖 {capacity}%";
+        format-plugged = " {capacity}%";
         format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
         on-click = "";
         tooltip = false;

@@ -17,6 +17,7 @@
     ./swappy.nix
     ./zoxide.nix
     ./eza.nix
+    ./lazygit.nix
   ];
   home.file.".config/sioyek/prefs_user.config".source = ./sioyek.config;
 

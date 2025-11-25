@@ -32,7 +32,6 @@ in {
       icon-library
       # cli tools
       ripgrep
-      lazygit
       fastfetch
       cmatrix
       railway

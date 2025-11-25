@@ -11,6 +11,7 @@ pkgs.writeShellScriptBin "web-search" ''
     [" Google Scholar"]="https://scholar.google.com/?authuser=1"
     [" YouTube"]="https://www.youtube.com/results?search_query="
     ["󱄅 NixOs Packages"]="https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
+    [" NerdFont Icons"]="https://www.nerdfonts.com/cheat-sheet?"
     ["󱁉 ChatGPT"]="https://chatgpt.com/"
   )
 
@@ -31,7 +32,7 @@ pkgs.writeShellScriptBin "web-search" ''
 
       if [[ -n "$query" ]]; then
         url=''${URLS[$platform]}$query
-        xdg-open "$url"
+        ${pkgs.google-chrome}/bin/google-chrome-stable --new-window "$url"
       else
         exit
       fi

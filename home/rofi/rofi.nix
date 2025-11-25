@@ -2,6 +2,15 @@
 
 let inherit (import ../../hosts/${host}/colors.nix { inherit pkgs; }) colors;
 in {
+  xdg.desktopEntries."ytmusic" = {
+    name = "YouTube Music";
+    comment = "Launch YouTube Music as a Chrome App";
+    exec =
+      "${pkgs.google-chrome}/bin/google-chrome-stable --app=https://music.youtube.com";
+    terminal = false;
+    categories = [ "AudioVideo" "Player" ];
+    icon = "youtube-music";
+  };
 
   programs = {
     rofi = {

@@ -469,7 +469,17 @@ vim.keymap.set("n", "<leader>cr", ":AsyncRun cargo r -r<CR>", { noremap = true, 
 --[[**************************************@******************************************
 *                                      TERMINAL                                     *
 *********************************************************************************--]]
-vim.api.nvim_set_keymap("t", "<escape>", [[<C-\><C-n>]], { noremap = true, silent = true })
+-- Only apply the terminal <Esc> mapping when the buffer isn't lazygit
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    local bufname = vim.api.nvim_buf_get_name(0)
+    if bufname:match("lazygit") then
+      return
+    end
+    vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { buffer = true, silent = true })
+  end,
+})
+
 -- Terminal mode cursor
 vim.cmd([[
   augroup TerminalCursorColor
@@ -670,7 +680,7 @@ require("nvim-treesitter.configs").setup({
 --[[**************************************@*****************************************
 *                                ASYNCRUN & FLOATERM                               *
 ********************************************************************************--]]
-vim.g.floaterm_autoinsert = false
+vim.g.floaterm_autoinsert = true
 vim.g.asyncrun_open = 0
 vim.keymap.set("n", "<A-s>", ":FloatermToggle<CR>", { noremap = true })
 vim.keymap.set("t", "<A-s>", "<C-\\><C-n>:FloatermToggle<CR>", { noremap = true })

@@ -6,6 +6,7 @@ in {
       "$modifier,SPACE,exec,${terminal}"
       "$modifier SHIFT,K,exec,list-keybinds"
       "$modifier,B,exec,pkill -USR1 waybar"
+      "$modifier,Z,exec,zen"
       "$modifier,R,exec,rofi-launcher"
       "$modifier SHIFT,R,exec,rebuild"
       "$modifier SHIFT,Return,exec,rofi-launcher"

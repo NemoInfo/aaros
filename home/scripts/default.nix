@@ -6,5 +6,6 @@
     (import ./task-waybar.nix { inherit pkgs; })
     (import ./web-search.nix { inherit pkgs; })
     (import ./rebuild.nix { inherit pkgs; })
+    (import ./zen.nix { inherit pkgs; })
   ];
 }

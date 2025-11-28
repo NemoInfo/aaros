@@ -26,4 +26,5 @@ in {
     cursor = colors.cursor;
     fonts = colors.fonts;
   };
+  fonts.packages = with pkgs; [ newcomputermodern ];
 }

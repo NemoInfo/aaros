@@ -58,6 +58,7 @@ in {
       hayagriva
 
       gh # github, why tough?
+      direnv
     ];
   in l1 ++ l2;
 }

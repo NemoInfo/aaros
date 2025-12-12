@@ -13,6 +13,7 @@
         clippaste > /tmp/thing.bib && hayagriva /tmp/thing.bib | clipcopy && echo "✔ YAML copied to clipboard"'';
     };
     initContent = ''
+      eval "$(direnv hook zsh)"
       if [[ -n "$IN_NIX_SHELL" ]]; then
         ZSH_THEME="cloud"
       fi

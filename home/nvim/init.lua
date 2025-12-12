@@ -456,7 +456,15 @@ vim.g.rustaceanvim = {
   server = {
     on_attach = on_attach,
     default_settings = {
-      ["rust-analyzer"] = {},
+      ["rust-analyzer"] = {
+        procMacro = {
+          enable = false,
+          ignored = {
+            ["miette"] = { "Diagnostic" },
+            ["thiserror"] = { "Error" },
+          },
+        }
+      },
     },
   },
 }

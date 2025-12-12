@@ -28,6 +28,8 @@
       "wheel" # sudo access
       "vboxusers" # Virtual Box
       "syncthing"
+      "tty"
+      "dialout"
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;

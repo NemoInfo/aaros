@@ -7,5 +7,6 @@
     (import ./web-search.nix { inherit pkgs; })
     (import ./rebuild.nix { inherit pkgs; })
     (import ./zen.nix { inherit pkgs; })
+    (import ./unicode-list.nix { inherit pkgs; })
   ];
 }

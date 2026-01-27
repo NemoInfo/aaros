@@ -5,6 +5,7 @@ in {
     bind = [
       "$modifier,SPACE,exec,${terminal}"
       "$modifier SHIFT,K,exec,list-keybinds"
+      "$modifier,U,exec,unicode-list"
       "$modifier,B,exec,pkill -USR1 waybar"
       "$modifier,Z,exec,zen"
       "$modifier,R,exec,rofi-launcher"

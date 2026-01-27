@@ -56,6 +56,7 @@ in {
       cargo # Rust dependecy manager
       cudatoolkit
       hayagriva
+      unicode-character-database
 
       gh # github, why tough?
       direnv

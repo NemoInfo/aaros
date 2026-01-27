@@ -8,10 +8,10 @@ pkgs.writeShellScriptBin "web-search" ''
   declare -A URLS
 
   URLS=(
-    [" Google Scholar"]="https://scholar.google.com/?authuser=1"
+    [" Google Scholar"]="https://scholar.google.com/scholar?authuser=1&q="
     [" YouTube"]="https://www.youtube.com/results?search_query="
     ["󱄅 NixOs Packages"]="https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query="
-    [" NerdFont Icons"]="https://www.nerdfonts.com/cheat-sheet?"
+    [" NerdFont Icons"]="https://www.nerdfonts.com/cheat-sheet?q="
     ["󱁉 ChatGPT"]="https://chatgpt.com/"
   )
 

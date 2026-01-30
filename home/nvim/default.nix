@@ -41,6 +41,8 @@ in {
         nvim-surround
         leap-nvim
         lsp-inlayhints-nvim
+        vim-visual-multi
+        vim-easy-align
       ];
     in l1 ++ l2;
   };

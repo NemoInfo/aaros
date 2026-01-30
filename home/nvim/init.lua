@@ -313,6 +313,7 @@ vim.o.signcolumn = "yes"
 
 local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
+  vim.b[bufnr].autoformat = true;
   -- Define key mappings for LSP functions
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)             -- Go to definition
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)         -- Go to implementation
@@ -349,9 +350,22 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_create_autocmd("BufWritePre", {
     buffer = bufnr,
     callback = function()
-      vim.lsp.buf.format({ async = true })
+      if vim.b[bufnr].autoformat then
+        vim.lsp.buf.format({ async = false })
+      end
     end,
   })
+
+  local function toggle_autoformat()
+    vim.b[bufnr].autoformat = not vim.b[bufnr].autoformat
+    if vim.b[bufnr].autoformat then
+      vim.notify("Autoformat: ON", vim.log.levels.INFO)
+    else
+      vim.notify("Autoformat: OFF", vim.log.levels.INFO)
+    end
+  end
+
+  vim.keymap.set("n", "<leader>lf", toggle_autoformat, opts)
 end
 
 local lspconfig = require("lspconfig")
@@ -367,6 +381,7 @@ lspconfig.clangd.setup({
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
   single_file_support = true,
+  on_attach = on_attach,
 })
 
 --[[**************************************@******************************************
@@ -735,3 +750,9 @@ end, { noremap = true, silent = true })
 require("nvim-surround").setup()
 require("leap").setup({})
 vim.keymap.set("n", "L", "<Plug>(leap-anywhere)")
+
+
+-- EASY ALIGN
+-- Start interactive EasyAlign in visual mode (e.g. vipga)
+vim.keymap.set("x", "ga", "<Plug>(EasyAlign)", { silent = true })
+vim.keymap.set("n", "ga", "<Plug>(EasyAlign)", { silent = true })

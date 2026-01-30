@@ -15,6 +15,8 @@ in {
       inkscape
       obs-studio
       vlc
+      modrinth-app
+
       # bottles
       # virtualbox
       steam
@@ -57,6 +59,7 @@ in {
       cudatoolkit
       hayagriva
       unicode-character-database
+      jre_minimal
 
       gh # github, why tough?
       direnv

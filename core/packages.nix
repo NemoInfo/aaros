@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ brightnessctl cliphist ];
+  environment.systemPackages = with pkgs; [ brightnessctl cliphist gdb ];
 
   programs = {
     neovim = {

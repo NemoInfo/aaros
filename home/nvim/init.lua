@@ -756,3 +756,96 @@ vim.keymap.set("n", "L", "<Plug>(leap-anywhere)")
 -- Start interactive EasyAlign in visual mode (e.g. vipga)
 vim.keymap.set("x", "ga", "<Plug>(EasyAlign)", { silent = true })
 vim.keymap.set("n", "ga", "<Plug>(EasyAlign)", { silent = true })
+
+
+local dap = require("dap")
+local dapui = require("dapui")
+
+dap.adapters.gdb = {
+  type = "executable",
+  command = "gdb",
+  args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
+}
+dap.configurations.c = {
+  {
+    name = "Launch",
+    type = "gdb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    args = {}, -- provide arguments if needed
+    cwd = "${workspaceFolder}",
+    stopAtBeginningOfMainSubprogram = false,
+  },
+  {
+    name = "Select and attach to process",
+    type = "gdb",
+    request = "attach",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    pid = function()
+      local name = vim.fn.input('Executable name (filter): ')
+      return require("dap.utils").pick_process({ filter = name })
+    end,
+    cwd = '${workspaceFolder}'
+  },
+  {
+    name = 'Attach to gdbserver :1234',
+    type = 'gdb',
+    request = 'attach',
+    target = 'localhost:1234',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}'
+  }
+}
+require("nvim-dap-virtual-text").setup {
+  -- This just tries to mitigate the chance that I leak tokens here. Probably won't stop it from happening...
+  display_callback = function(variable)
+    local name = string.lower(variable.name)
+    local value = string.lower(variable.value)
+    if name:match "secret" or name:match "api" or value:match "secret" or value:match "api" then
+      return "*****"
+    end
+
+    if #variable.value > 15 then
+      return " " .. string.sub(variable.value, 1, 15) .. "... "
+    end
+
+    return " " .. variable.value
+  end,
+}
+dapui.setup()
+
+
+vim.keymap.set("n", "<A-b>", dap.toggle_breakpoint)
+vim.keymap.set("n", "<A-g>", dap.run_to_cursor)
+vim.keymap.set("n", "<A-?>", function()
+  require("dapui").eval(nil, { enter = true })
+end)
+vim.keymap.set("n", "<A-c>", dap.continue)
+vim.keymap.set("n", "<A-i>", dap.step_into)
+vim.keymap.set("n", "<A-o>", dap.step_over)
+vim.keymap.set("n", "<A-u>", dap.step_out)
+vim.keymap.set("n", "<A-k>", dap.step_back)
+vim.keymap.set("n", "<A-r>", dap.restart)
+vim.keymap.set("n", "<A-l>", dap.run_last)
+
+vim.keymap.set("n", "<A-u>o", dapui.open)
+vim.keymap.set("n", "<A-u>c", dapui.close)
+
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated.dapui_config = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
+end

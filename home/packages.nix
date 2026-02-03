@@ -42,6 +42,7 @@ in {
       (btop.override { cudaSupport = true; })
       helix
       wgnord
+      rlwrap
 
       # languages
       gcc # C compiler

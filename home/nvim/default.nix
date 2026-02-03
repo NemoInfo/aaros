@@ -9,6 +9,9 @@ in {
     plugins = let
       l1 = with unstable.vimPlugins; [ typst-preview-nvim typst-vim ];
       l2 = with pkgs.vimPlugins; [
+        nvim-dap
+        nvim-dap-ui
+        nvim-dap-virtual-text
         lualine-nvim
         rose-pine
         telescope-fzf-native-nvim

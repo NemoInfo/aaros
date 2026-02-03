@@ -313,7 +313,7 @@ vim.o.signcolumn = "yes"
 
 local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
-  vim.b[bufnr].autoformat = true;
+  vim.b[bufnr].autoformat = false;
   -- Define key mappings for LSP functions
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)             -- Go to definition
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)         -- Go to implementation

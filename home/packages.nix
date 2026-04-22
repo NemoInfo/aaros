@@ -16,6 +16,7 @@ in {
       obs-studio
       vlc
       modrinth-app
+      qbittorrent jackett # torrent thingy
 
       # bottles
       # virtualbox
@@ -35,6 +36,7 @@ in {
       # cli tools
       ripgrep
       fastfetch
+      fd
       cmatrix
       railway
       cloc

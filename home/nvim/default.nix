@@ -1,5 +1,14 @@
 { pkgs, system, inputs, ... }:
 let unstable = import inputs.nixpkgs-unstable { system = system; };
+  jai-vim = pkgs.vimUtils.buildVimPlugin {
+    name = "jai-vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "rluba";
+      repo = "jai.vim";
+      rev = "master";
+        sha256 = "sha256-VFNIcJmz44y/1TzJ8IpB5US5VYZwWL7FhjZC4vKOuoQ=";
+    };
+  };
 in {
   programs.neovim = {
     enable = true;
@@ -9,6 +18,7 @@ in {
     plugins = let
       l1 = with unstable.vimPlugins; [ typst-preview-nvim typst-vim ];
       l2 = with pkgs.vimPlugins; [
+        jai-vim
         nvim-dap
         nvim-dap-ui
         nvim-dap-virtual-text

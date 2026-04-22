@@ -4,9 +4,8 @@ let
 in {
   programs.git = {
     enable = true;
-    userEmail = email;
-    userName = name;
-
+    user.email = email;
+    user.name  = name;
     extraConfig = { init.defaultBranch = "main"; };
   };
 

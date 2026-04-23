@@ -1,9 +1,6 @@
-{ username, ... }: {
+{ ... }: {
   services.syncthing = {
     enable = true;
-    user = "${username}";
-    configDir = "/home/${username}/.config/syncthing";
-    openDefaultPorts = true;
     settings = {
       devices = {
         ipad.id =
@@ -15,11 +12,9 @@
         "Vault" = {
           path = "/home/aaron/Vault";
           devices = [ "ipad" "phone" ];
-          ignorePerms = false;
           type = "sendreceive";
         };
       };
     };
-    extraFlags = [ "--no-default-folder" ];
   };
 }

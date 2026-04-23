@@ -8,7 +8,6 @@
     ./sddm.nix
     ./network.nix
     ./packages.nix
-    ./syncthing.nix
     ./services.nix
     ./stylix.nix
     ./thunar.nix

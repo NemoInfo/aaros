@@ -1,6 +1,6 @@
 { pkgs }: {
   colors = {
-    image = "studio.png";
+    image = ../../wallpapers/wallpaper.jpg;
     base00 = "282936";
     base01 = "3a3c4e";
     base02 = "4d4f68";

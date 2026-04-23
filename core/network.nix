@@ -14,6 +14,8 @@
     };
   };
 
+  services.syncthing.openDefaultPorts = true;
+
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
   ];

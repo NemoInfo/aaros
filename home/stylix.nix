@@ -7,7 +7,9 @@ _: {
     ghostty.enable = false;
     neovim.enable = false;
     alacritty.enable = false;
+    gnome.enable = false;
     gtk.enable = true;
+
     qt = {
       enable = true;
       platform = "qtct";

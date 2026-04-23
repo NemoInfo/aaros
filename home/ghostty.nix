@@ -23,7 +23,7 @@ in {
 
     wait-after-command = false
     shell-integration = detect
-    window-save-state = always
+    window-save-state = never
     gtk-single-instance = true
     unfocused-split-opacity = 0.5
     quick-terminal-position = center

@@ -18,7 +18,8 @@
     ./zoxide.nix
     ./eza.nix
     ./lazygit.nix
-    ./tmux.nix
+    ./syncthing.nix
+    ./tmux
   ];
   home.file.".config/sioyek/prefs_user.config".source = ./sioyek.config;
 

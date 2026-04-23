@@ -30,9 +30,9 @@
         }
         {
           type = "command";
-          key = " ├  ZaneyOS ";
+          key = " ├  ";
           keyColor = "31";
-          text = "echo v$" + "{ZANEYOS_VERSION}";
+          text = "aaros";
         }
         {
           type = "kernel";

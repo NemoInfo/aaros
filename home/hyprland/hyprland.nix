@@ -22,6 +22,14 @@ in {
   home.file.".face.icon".source = ./logo.jpg;
   home.file.".config/face.jpg".source = ./logo.jpg;
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = [ "~/aaros/wallpapers/wallpaper.png" ];
+      wallpaper = [ ",~/aaros/wallpapers/wallpaper.png" ];
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.hyprland;
@@ -48,10 +56,9 @@ in {
       };
 
       gestures = {
-        workspace_swipe = 1;
-        workspace_swipe_fingers = 3;
+        gesture = ["3, horizontal, workspace"];
         workspace_swipe_distance = 500;
-        workspace_swipe_invert = 1;
+        workspace_swipe_invert = true;
         workspace_swipe_min_speed_to_force = 30;
         workspace_swipe_cancel_ratio = 0.5;
         workspace_swipe_create_new = 1;

@@ -5,7 +5,6 @@ in {
   home.packages = let
     l1 = with unstable; [ typst tinymist ];
     l2 = with pkgs; [
-      syncthing
       # apps
       sioyek
       google-chrome

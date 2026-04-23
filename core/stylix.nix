@@ -25,6 +25,7 @@ in {
     opacity.terminal = colors.opacity.terminal;
     cursor = colors.cursor;
     fonts = colors.fonts;
+    image = colors.image;
   };
   fonts.packages = with pkgs; [ newcomputermodern ];
 }

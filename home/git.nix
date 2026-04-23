@@ -4,9 +4,11 @@ let
 in {
   programs.git = {
     enable = true;
-    user.email = email;
-    user.name  = name;
-    extraConfig = { init.defaultBranch = "main"; };
+    settings = { 
+      user.email = email;
+      user.name  = name;
+      init.defaultBranch = "main";
+    };
   };
 
   programs.ssh = {

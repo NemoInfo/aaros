@@ -7,11 +7,7 @@ let
   sddm-astronaut = pkgs.sddm-astronaut.override {
     embeddedTheme = "pixel_sakura";
     themeConfig = {
-      Background = pkgs.fetchurl {
-        url =
-          "https://raw.githubusercontent.com/anotherhadi/nixy-wallpapers/refs/heads/main/wallpapers/studio.gif";
-        sha256 = "sha256-qySDskjmFYt+ncslpbz0BfXiWm4hmFf5GPWF2NlTVB8=";
-      };
+      Background = "~/aaros/wallpapers/wallpaper.jpg";
       HourFormat = "h:mm AP";
       HeaderTextColor = "#${textColor}";
       DateTextColor = "#${textColor}";

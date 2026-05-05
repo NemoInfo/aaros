@@ -788,6 +788,11 @@ dap.adapters.gdb = {
   args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
 }
 
+dap.adapters.lldb = {
+  type = 'executable',
+  command = 'lldb-dap',
+}
+
 dap.configurations.c = {
   {
     name = "Launch",
@@ -824,22 +829,17 @@ dap.configurations.c = {
     cwd = '${workspaceFolder}'
   }
 }
--- require("nvim-dap-virtual-text").setup {
--- 	-- This just tries to mitigate the chance that I leak tokens here. Probably won't stop it from happening...
--- 	display_callback = function(variable)
--- 		local name = string.lower(variable.name)
--- 		local value = string.lower(variable.value)
--- 		if name:match "secret" or name:match "api" or value:match "secret" or value:match "api" then
--- 			return "*****"
--- 		end
---
--- 		if #variable.value > 15 then
--- 			return " " .. string.sub(variable.value, 1, 15) .. "... "
--- 		end
---
--- 		return " " .. variable.value
--- 	end,
--- }
+
+dap.configurations.jai = {{
+    name = 'Launch file',
+    type = 'lldb',
+    request = 'launch',
+    program = '${command:pickFile}',
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    sourceLanguages = { 'jai' },
+}}
+
 dapui.setup()
 
 

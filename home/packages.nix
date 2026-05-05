@@ -15,14 +15,13 @@ in {
       obs-studio
       vlc
       modrinth-app
-      qbittorrent jackett # torrent thingy
-
-      # bottles
-      # virtualbox
+      blender
       steam
+      zoom-us
+
       qemu
       quickemu
-      zoom-us
+
       libnotify
       rofi-bluetooth
       pavucontrol
@@ -32,6 +31,7 @@ in {
       libertinus # TODO: move these to system fonts
       liberation_ttf
       icon-library
+
       # cli tools
       ripgrep
       fastfetch
@@ -44,9 +44,11 @@ in {
       helix
       wgnord
       rlwrap
+      sshfs
 
       # languages
-      gcc # C compiler
+      lldb # debugger
+      gcc  # C compiler
       clang-tools # CPP lsp
       nil # Nix lsp
       haskellPackages.nixfmt # Nix fmt

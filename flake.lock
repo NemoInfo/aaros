@@ -193,6 +193,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1791260994,
+        "narHash": "sha256-Miqqk/ammqnTUxaoCyvtwoPeLbI1ksFyLxi/CazZpWY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -219,11 +235,27 @@
         "type": "github"
       }
     },
+    "raddebugger": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1791380128,
+        "narHash": "sha256-uuvfCBQRHRURO8UZCwFZy7R0pJ3xnygbmrYWkhxpGdk=",
+        "path": "/home/aaron/Software/raddebugger",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/aaron/Software/raddebugger",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "raddebugger": "raddebugger",
         "stylix": "stylix"
       }
     },

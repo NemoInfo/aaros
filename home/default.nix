@@ -44,7 +44,7 @@
     enable = true;
     mounts = {
       pi = {
-        host = "192.168.0.222";
+        host = "192.168.1.246";
         port = 22;
         user = "wukong";
         mountDestPath = "/home/aaron/wukong";
@@ -53,7 +53,7 @@
         sshKey = "/home/aaron/.ssh/id_ed25519_pi";
       };
       pi-global = {
-        host = "5.65.50.56";
+        host = "176.254.23.205";
         port = 22;
         user = "wukong";
         mountDestPath = "/home/aaron/wukong";

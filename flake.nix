@@ -12,6 +12,7 @@
       url = "github:danth/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    raddebugger.url = "path:/home/aaron/Software/raddebugger";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

@@ -494,7 +494,7 @@ vim.g.rustaceanvim = {
     default_settings = {
       ["rust-analyzer"] = {
         procMacro = {
-          enable = false,
+          enable = true,
           ignored = {
             ["miette"] = { "Diagnostic" },
             ["thiserror"] = { "Error" },
@@ -914,3 +914,8 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<leader>jf", find_files_jai_modules, opts)
   end,
 })
+
+vim.g.maplocalleader = '  ';
+require("lean").setup { 
+  mappings = true 
+}

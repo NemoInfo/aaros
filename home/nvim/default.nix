@@ -6,7 +6,16 @@ let unstable = import inputs.nixpkgs-unstable { system = system; };
       owner = "rluba";
       repo = "jai.vim";
       rev = "master";
-        sha256 = "sha256-VFNIcJmz44y/1TzJ8IpB5US5VYZwWL7FhjZC4vKOuoQ=";
+      sha256 = "sha256-VFNIcJmz44y/1TzJ8IpB5US5VYZwWL7FhjZC4vKOuoQ=";
+    };
+  };
+  typcite-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "typcite.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "StephanoGit";
+      repo = "typcite.nvim";
+      rev = "main";
+      sha256 = "sha256-Qdch5TsafFCkUJ3Zl3/Fxu/HFQdQdJC4Q9VFG1un4gc="; 
     };
   };
 in {
@@ -16,7 +25,7 @@ in {
     viAlias = true;
     vimAlias = true;
     plugins = let
-      l1 = with unstable.vimPlugins; [ typst-preview-nvim typst-vim ];
+      l1 = with unstable.vimPlugins; [ typst-preview-nvim typst-vim typcite-nvim ];
       l2 = with pkgs.vimPlugins; [
         jai-vim
         nvim-dap
@@ -56,6 +65,7 @@ in {
         lsp-inlayhints-nvim
         vim-visual-multi
         vim-easy-align
+        lean-nvim
       ];
     in l1 ++ l2;
   };

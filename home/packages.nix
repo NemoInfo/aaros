@@ -2,6 +2,7 @@
 let unstable = import inputs.nixpkgs-unstable { system = system; };
 in {
   nixpkgs.config.allowUnfree = true;
+
   home.packages = let
     l1 = with unstable; [ typst tinymist ];
     l2 = with pkgs; [
@@ -45,9 +46,11 @@ in {
       wgnord
       rlwrap
       sshfs
+      lldb # debugger
+      ngrok # tunnel maker
 
       # languages
-      lldb # debugger
+      inputs.raddebugger.packages.x86_64-linux.default # raddebugger
       gcc  # C compiler
       clang-tools # CPP lsp
       nil # Nix lsp

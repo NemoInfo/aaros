@@ -7,6 +7,6 @@
   keyboardLayout = "gb,eu";
   nvidiaID = "PCI:1:0:0";
   amdgpuID = "PCI:5:0:0";
-  browser = "google-chrome-stable";
+  browser = "firefox";
   terminal = "ghostty --gtk-single-instance=true";
 }

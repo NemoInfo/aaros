@@ -161,6 +161,37 @@
         "type": "github"
       }
     },
+    "jai": {
+      "inputs": {
+        "jai-sdk": "jai-sdk",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791381659,
+        "narHash": "sha256-3l4UqbqNAAo3XYjRe2/Nh3aDHJzxI14n7K4LLyPzXPY=",
+        "path": "/home/aaron/Software/jai-flake",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/aaron/Software/jai-flake",
+        "type": "path"
+      }
+    },
+    "jai-sdk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-evdkN4JYNGzNPBSclGyu9NacwRYLM7RIBIckqbOAyo4=",
+        "path": "/home/aaron/Software/jai",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/aaron/Software/jai",
+        "type": "path"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1776734388,
@@ -184,22 +215,6 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "b12141ef619e0a9c1c84dc8c684040326f27cdcc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1791260994,
-        "narHash": "sha256-Miqqk/ammqnTUxaoCyvtwoPeLbI1ksFyLxi/CazZpWY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
         "type": "github"
       },
       "original": {
@@ -237,7 +252,9 @@
     },
     "raddebugger": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1791380128,
@@ -253,6 +270,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "jai": "jai",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "raddebugger": "raddebugger",

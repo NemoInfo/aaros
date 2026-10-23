@@ -1,5 +1,13 @@
 _: {
+  programs.seahorse.enable = true;   # GUI to see and manage the keyring, and supplies the password prompt
+  security.pam.services.login.enableGnomeKeyring = true; # Unlock the keyring at login. Use the line for how you log in:
   services = {
+    gnome.gnome-keyring.enable = true;
+
+    tailscale = {
+      enable = true;
+      openFirewall = true;
+    };
     libinput.enable = true; # Input Handling
     fstrim.enable = true; # SSD Optimizer
     gvfs.enable = true; # For Mounting USB & More

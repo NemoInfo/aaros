@@ -25,5 +25,14 @@
     };
     fuse.userAllowOther = true;
     hyprlock.enable = true;
+    nix-ld = { # for running dynamicly linked execitables
+      enable = true;
+      libraries = with pkgs; [
+        zlib
+        libx11
+        libGL
+        alsa-lib
+      ];
+    };
   };
 }

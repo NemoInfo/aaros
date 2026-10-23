@@ -2,10 +2,12 @@
 let unstable = import inputs.nixpkgs-unstable { system = system; };
 in {
   nixpkgs.config.allowUnfree = true;
-
   home.packages = let
-    l1 = with unstable; [ typst tinymist ];
+    l1 = with unstable; [ typst tinymist wayscriber ];
     l2 = with pkgs; [
+      zip unzip
+      nextcloud-client
+
       # apps
       sioyek
       google-chrome
@@ -50,6 +52,7 @@ in {
       ngrok # tunnel maker
 
       # languages
+      inputs.jai.packages.x86_64-linux.default # jai
       inputs.raddebugger.packages.x86_64-linux.default # raddebugger
       gcc  # C compiler
       clang-tools # CPP lsp
@@ -70,6 +73,8 @@ in {
 
       gh # github, why tough?
       direnv
+
+      flatpak
     ];
   in l1 ++ l2;
 }
